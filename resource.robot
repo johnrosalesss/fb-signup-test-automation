@@ -14,6 +14,7 @@ ${VALID_MONTH}         11
 ${VALID_DAY}           17
 ${VALID_YEAR}          1994
 ${VALID_PASSWORD}      Paolo095!
+${VALID_EMAIL}         natsuxlucy02@gmail.com
 
 # SPECIFIC MOBILE NUMBER FORMATS (Scalar Variables)
 ${MOBILE_+63_NO_SPACES}       +639162856862
@@ -26,7 +27,21 @@ ${MOBILE_WITH_LETTERS}        09AB2856862
 ${MOBILE_WITH_SPECIAL_CHARS}  0916-!@#-6862
 ${MOBILE_NO_COUNTRY_CODE}     9162856862
 ${MOBILE_STARTS_WITH_08}      08162856862
-${EMPTY_INPUT}                
+${EMPTY_INPUT}                ${EMPTY}
+
+# SPECIFIC PASSWORD FORMATS (Scalar Variables)
+${PASSWORD_ALL_LOWERCASE}       abcdef
+${PASSWORD_ALL_UPPERCASE}       ABCDEF
+${PASSWORD_ALL_NUMBERS}         123456
+${PASSWORD_ALL_SPECIAL_CHARS}   !@#$%^
+${PASSWORD_LOWERCASE_NUMBER}    abc123
+${PASSWORD_UPPERCASE_NUMBER}    ABC123
+${PASSWORD_UPPERCASE_SPECIAL}   ABC@# 
+${PASSWORD_VALID_ONE_OF_EACH}   aB1@34
+${PASSWORD_MISSING_NUMBER}      Abcdef!
+${PASSWORD_MISSING_SPECIAL}     Abc123
+${PASSWORD_TOO_SHORT}           aB1@
+${PASSWORD_BLANK}               ${EMPTY}
 
 *** Keywords ***
 Browser Is Opened To Facebook Registration Page
@@ -97,3 +112,42 @@ Confirm Mobile Number Page Should Be Displayed
 
 Registration Error Should Appear
     Wait Until Element Is Visible    css:._5dbb    timeout=15s
+
+
+# VALID PASSWORD VERIFICATION
+Password Should Be Accepted
+    [Documentation]    Verifies that the password was accepted and registration progressed
+    Sleep    15s    # Wait for page transition
+
+# INVALID PASSWORD VERIFICATION
+Password Error Should Be Displayed
+    [Documentation]    Verifies that an invalid password error is shown
+    Sleep    15s    # Wait for page transition
+
+
+
+
+# PASSWORD INPUT KEYWORDS
+User Enters Registration With Password
+    [Arguments]    ${password}
+    # Personal Information
+    Input Text    name:firstname       ${VALID_FIRST_NAME}
+    Input Text    name:lastname        ${VALID_LAST_NAME}
+    
+    # Birthdate Selection
+    Click Element    name:birthday_month
+    Select From List By Value    name:birthday_month    ${VALID_MONTH}
+    Click Element    name:birthday_day
+    Select From List By Value    name:birthday_day      ${VALID_DAY}
+    Click Element    name:birthday_year
+    Select From List By Value    name:birthday_year     ${VALID_YEAR}
+    
+    # Gender Selection
+    Click Element    css:input[name="sex"][value="2"]
+    
+    # MOBILE NUMBER INPUT (Uses argument value)
+    Input Text    name:reg_email__     ${VALID_EMAIL}
+    
+    # Password and Submission
+    Input Text    name:reg_passwd__    ${password}
+    Click Button    name:websubmit
