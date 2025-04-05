@@ -125,7 +125,17 @@ Password Error Should Be Displayed
     Sleep    15s    # Wait for page transition
 
 
-
+# UNIFIED PASSWORD TEST KEYWORD
+Test Password Validation
+    [Arguments]    ${password}    ${expected_result}
+    User Enters Registration With Password    ${password}
+    
+    Run Keyword If    "${expected_result}" == "valid"    Password Should Be Accepted
+    ...    ELSE IF    "${expected_result}" == "invalid"    Password Error Should Be Displayed
+    ...    ELSE    Fail    Invalid expected_result parameter: ${expected_result}
+    
+    # Keep browser open for inspection
+    Sleep    5s
 
 # PASSWORD INPUT KEYWORDS
 User Enters Registration With Password

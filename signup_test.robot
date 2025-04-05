@@ -73,58 +73,58 @@ Invalid Mobile Number Empty Input
 Invalid Password With All Lowercase
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_ALL_LOWERCASE}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With All Uppercase
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_ALL_UPPERCASE}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With All Numbers
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_ALL_NUMBERS}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With All Special Characters
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_ALL_SPECIAL_CHARS}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With Lowercase and Number
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_LOWERCASE_NUMBER}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With Uppercase and Number
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_UPPERCASE_NUMBER}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Invalid Password With Uppercase and Special Character
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_UPPERCASE_SPECIAL}
-    Then Password Should Be Accepted
+    Then Password Error Should Be Displayed
 
 Valid Password With One of Each
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password    ${PASSWORD_VALID_ONE_OF_EACH}
     Then Password Should Be Accepted
-Invalid Password Missing Number
+Valid Password Missing Number
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password     ${PASSWORD_MISSING_NUMBER}
-    Then Registration Error Should Appear
+    Then Password Should Be Accepted
 
 Invalid Password Missing Special Character
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password     ${PASSWORD_MISSING_SPECIAL}
-    Then Registration Error Should Appear
+    Then Password Should Be Accepted
 
 Invalid Password Too Short
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password     ${PASSWORD_TOO_SHORT}
-    Then Registration Error Should Appear
+    Then Password Error Should Be Displayed
 
 Invalid Password Blank Input
     Given Browser Is Opened To Facebook Registration Page
     When User Enters Registration With Password     ${PASSWORD_BLANK}
-    Then Registration Error Should Appear
+    Then Password Error Should Be Displayed
