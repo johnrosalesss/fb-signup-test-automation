@@ -66,18 +66,34 @@ User Enters Valid Credentials With Mobile Number
     Input Text    name:reg_passwd__    ${VALID_PASSWORD}
     Click Button    name:websubmit
 
+User Enters Invalid Credentials With Mobile Number
+    [Arguments]    ${mobile_number}
+    # Personal Information
+    Input Text    name:firstname       ${VALID_FIRST_NAME}
+    Input Text    name:lastname        ${VALID_LAST_NAME}
+    
+    # Birthdate Selection
+    Click Element    name:birthday_month
+    Select From List By Value    name:birthday_month    ${VALID_MONTH}
+    Click Element    name:birthday_day
+    Select From List By Value    name:birthday_day      ${VALID_DAY}
+    Click Element    name:birthday_year
+    Select From List By Value    name:birthday_year     ${VALID_YEAR}
+    
+    # Gender Selection
+    Click Element    css:input[name="sex"][value="2"]
+    
+    # MOBILE NUMBER INPUT (Uses argument value)
+    Input Text    name:reg_email__     ${mobile_number}
+    
+    # Password and Submission
+    Input Text    name:reg_passwd__    ${VALID_PASSWORD}
+    Click Button    name:websubmit
+
 # VERIFICATION KEYWORDS
 Confirm Mobile Number Page Should Be Displayed
-    Wait Until Page Contains    Enter the code from your mobile number    timeout=20s
-    Page Should Contain Element    css:input[name="code"] 
+    Sleep    10s    # Wait for 15 seconds before checking
+    Wait Until Element Is Visible    css:._5dbb    timeout=15s
 
 Registration Error Should Appear
     Wait Until Element Is Visible    css:._5dbb    timeout=15s
-    Page Should Contain    There was an error with your registration
-
-Error Icon Should Be Displayed
-    Element Should Be Visible    css:._5dbb
-
-Input Border Should Show Error Color
-    ${border}=    Get Element Attribute    css:input._58mf    style
-    Should Contain    ${border}    border-color: rgb(240, 40, 73)

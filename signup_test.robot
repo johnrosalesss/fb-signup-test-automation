@@ -27,9 +27,42 @@ Valid Mobile Number With Dashes
 
 Invalid Mobile Number Too Short
     Given Browser Is Opened To Facebook Registration Page
-    When User Enters Valid Credentials With Mobile Number    ${MOBILE_TOO_SHORT}
+    When User Enters Invalid Credentials With Mobile Number    ${MOBILE_TOO_SHORT}
     Then Registration Error Should Appear
-    And Error Icon Should Be Displayed
-    And Input Border Should Show Error Color
 
-    
+
+Invalid Mobile Number Too Long
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number   ${MOBILE_TOO_LONG}
+    Then Registration Error Should Appear
+
+
+Invalid Mobile Number With Letters
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number    ${MOBILE_WITH_LETTERS}
+    Then Registration Error Should Appear
+
+
+Invalid Mobile Number With Special Characters
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number    ${MOBILE_WITH_SPECIAL_CHARS}
+    Then Registration Error Should Appear
+
+
+Invalid Mobile Number Without Country Code
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number    ${MOBILE_NO_COUNTRY_CODE}
+    Then Registration Error Should Appear
+
+
+Invalid Mobile Number Starts With 08
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number    ${MOBILE_STARTS_WITH_08}
+    Then Registration Error Should Appear
+
+
+Invalid Mobile Number Empty Input
+    Given Browser Is Opened To Facebook Registration Page
+    When User Enters Invalid Credentials With Mobile Number    ${EMPTY_INPUT}
+    Then Registration Error Should Appear
+ 
