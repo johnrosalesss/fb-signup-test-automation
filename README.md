@@ -2,7 +2,7 @@
 
 ## 🔍 Overview
 
-This repository provides automated test cases for validating Facebook’s **Sign-Up** page, specifically focusing on the **Mobile Number** and **Password** fields. The tests are built using **Robot Framework** and **SeleniumLibrary**.
+This repository provides automated test cases for validating Facebook’s **Sign-Up** page, focusing on the **Mobile Number** and **Password** fields. The tests are built using **Robot Framework** and **SeleniumLibrary**.
 
 ---
 
@@ -10,13 +10,17 @@ This repository provides automated test cases for validating Facebook’s **Sign
 
 ### 📱 1. Mobile Number Test Case
 
-Validate the **Mobile Number** input field by checking different valid and invalid formats. Scenarios include proper input formatting, edge cases, and expected error messages.
+Validate the **Mobile Number** input field by testing various valid and invalid formats. Scenarios include:
+
+- Proper input formatting  
+- Edge cases  
+- Expected error messages
 
 ### 🔑 2. Password Test Case
 
-All participants will work on validating the **Password** field. Ensure your test cases verify the following rules:
+Validate the **Password** field against Facebook's complexity requirements. Ensure test cases verify:
 
-- ✅ Minimum number of characters  
+- ✅ Minimum of 6 characters  
 - 🔠 At least one lowercase letter  
 - 🔡 At least one uppercase letter  
 - 🔢 At least one numeric digit  
@@ -26,18 +30,18 @@ All participants will work on validating the **Password** field. Ensure your tes
 
 ## 🧪 Test Case Guidelines
 
-- **Test Matrix** 📊: Use the provided matrix as a foundation. You're encouraged to add more relevant scenarios.
+- **Test Matrix** 📊  
 - **Deliverables**:
-  - ✅ Minimum of **four (4)** test cases written in **Gherkin** syntax (GIVEN, WHEN, THEN)
-  - ✅ Keywords used along with their defined steps
+  - ✅ Minimum of **four (4)** test cases written in **Gherkin** syntax (`GIVEN`, `WHEN`, `THEN`)
+  - ✅ Clearly defined keywords and steps
   - ✅ Hardcoded test data is allowed
-  - ✅ Prepare a **presentation and live demo** for your work
+  - ✅ Prepare a **presentation and live demo**
 
 ---
 
 ## 🎯 Objectives
 
-Build and run test cases that validate the **Mobile Number** and **Password** fields of Facebook's sign-up form, with an emphasis on the **password's minimum requirement** and character composition.
+Build and run test cases that validate the **Mobile Number** and **Password** fields on Facebook’s sign-up form, especially ensuring passwords meet the required criteria.
 
 ---
 
@@ -50,50 +54,92 @@ Build and run test cases that validate the **Mobile Number** and **Password** fi
 
 ## 🧠 How It Works
 
-This Robot Framework suite is structured as follows:
+This Robot Framework suite includes:
 
 ### **Settings**
 - Imports a shared resource file (`resource.robot`)
-- Ensures the browser is closed after each test using a teardown: `Close Browser`
+- Uses `Close Browser` as a teardown step after each test
 
 ### **Variables**
-- Stores test data such as valid/invalid mobile numbers, password combinations, and browser settings
+- Stores test data for mobile numbers, password combinations, and browser settings
 
 ### **Test Cases**
 1. ✅ **Valid Mobile Numbers**  
-   Tests entries with:
-   - `+63` country code  
-   - `09` prefix  
-   - Spaces, dashes, or formatted input
+   - Examples: `+639162856662`, `09162556862`, `+63 916 285 6982`, `+63-916-285-6982`
 
 2. ❌ **Invalid Mobile Numbers**  
-   Covers:
-   - Too short/long numbers  
-   - Letters or special characters  
-   - Missing country code or invalid prefixes  
-   - Empty input
+   - Examples: `0916255`, `09162556862124A`, `09AB2556862`, `08162556862`
 
 3. 🔐 **Password Combinations**  
-   Validates:
-   - Lowercase-only, uppercase-only, numeric-only, and special-char-only passwords  
-   - Mixed combinations based on Facebook’s complexity rules
+   - Lowercase-only, uppercase-only, numeric-only, special char-only  
+   - Mixed combinations according to Facebook’s password rules
 
-### **Keywords**
-Custom reusable keywords encapsulate tasks like:
+---
 
-- `User Enters Valid Credentials With Mobile Number`
-- `User Enters Registration With Password`
-- `Confirm Mobile Number Page Should Be Displayed`
-- `Registration Error Should Appear`
+## 🔑 Keywords Reference
 
-These keywords help maintain clean, readable, and modular test scripts.
+Reusable Robot Framework keywords for clean and modular test scripts:
+
+| **Keyword Name**                                      | **Purpose**                                      |
+|-------------------------------------------------------|--------------------------------------------------|
+| `Browser Is Opened To Facebook Registration Page`     | Opens the browser and navigates to Facebook      |
+| `User Enters Valid Credentials With Mobile Number`    | Inputs a valid mobile number                     |
+| `User Enters Invalid Credentials With Mobile Number`  | Inputs an invalid mobile number                  |
+| `Confirm Mobile Number Page Should Be Displayed`      | Checks if confirmation page is displayed         |
+| `Registration Error Should Appear`                    | Verifies error message for invalid input         |
+| `User Enters Registration With Password`              | Inputs a password                                |
+| `Password Error Should Be Displayed`                  | Validates rejection of invalid/weak password     |
+| `Password Should Be Accepted`                         | Confirms acceptance of valid password            |
+
+---
+
+## 📊 Mobile Number Test Matrix
+
+| **Test Case Description**                   | **Example**        | **VALID** | **INVALID** | **BLANK** |
+|---------------------------------------------|--------------------|:---------:|:-----------:|:---------:|
+| With `+63` country code (no spaces)          | +639162856662      | ✅        |             |           |
+| With `09` prefix                             | 09162556862        | ✅        |             |           |
+| With spaces                                  | +63 916 285 6982   | ✅        |             |           |
+| With dashes                                  | +63-916-285-6982   | ✅        |             |           |
+| Too short                                    | 0916255            |          | ❌          |           |
+| Too long / extra characters                  | 09162556862124A    |          | ❌          |           |
+| Contains letters                             | 09AB2556862        |          | ❌          |           |
+| Special characters not allowed               | 0916-989-6862      |          | ❌          |           |
+| Missing country code                         | 9162556862         |          | ❌          |           |
+| Starts with invalid prefix (e.g. 08)         | 08162556862        |          | ❌          |           |
+| Empty input                                  | (blank)            |          |             | ✅        |
+
+---
+
+## 🔐 Password Test Matrix
+
+### Password Requirements (Based on Facebook’s Criteria)
+
+- Minimum of **6 characters**
+- Must include at least **1 letter** (uppercase or lowercase)
+- At least **1 number**
+- At least **1 special character**
+
+| **Password Example**        | **VALID** | **INVALID** | **BLANK** |
+|----------------------------|:---------:|:-----------:|:---------:|
+| `abcdef` (all lowercase)   |           | ✅          |           |
+| `ABCDEF` (all uppercase)   |           | ✅          |           |
+| `123456` (only numbers)    |           | ✅          |           |
+| `!@#$%^` (only special)    |           | ✅          |           |
+| `abc123` (lowercase + num) |           | ✅          |           |
+| `ABC!@#` (uppercase + spec)|           | ✅          |           |
+| `aB1@34` (valid combo)     | ✅        |             |           |
+| `Abcdef!` (missing number) | ✅         |           |           |
+| `Abc123` (missing special) | ✅        |             |           |
+| `aB1@` (too short)         |           | ✅          |           |
+| (blank)                    |           |             | ✅        |
 
 ---
 
 ## ✅ Summary
 
-This project ensures robust validation testing of Facebook’s sign-up form using a structured, maintainable Robot Framework test suite. It promotes collaboration, best practices in test design, and clear reporting through demos and presentations.
+This project ensures comprehensive validation of Facebook’s sign-up form using a well-structured Robot Framework suite. It encourages best practices in automation, clear reporting, and team collaboration through live demos and documentation.
 
 ---
 
-Happy testing! 🧪🎉
+**Happy testing! 🧪🎉**
