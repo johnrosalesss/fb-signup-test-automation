@@ -8,12 +8,12 @@ ${DELAY}          0.5
 ${FACEBOOK_REGISTER_URL}    https://www.facebook.com/r.php?locale=en_US&display=page
 
 # User Credentials
-${VALID_FIRST_NAME}    Juan
-${VALID_LAST_NAME}     Cruz
-${VALID_MONTH}         6
-${VALID_DAY}           1
-${VALID_YEAR}          1990
-${VALID_PASSWORD}      Password123!
+${VALID_FIRST_NAME}    John Crisistom
+${VALID_LAST_NAME}     Rosales
+${VALID_MONTH}         11
+${VALID_DAY}           17
+${VALID_YEAR}          1994
+${VALID_PASSWORD}      Paolo095!
 
 # SPECIFIC MOBILE NUMBER FORMATS (Scalar Variables)
 ${MOBILE_+63_NO_SPACES}       +639162856862
@@ -26,7 +26,7 @@ ${MOBILE_WITH_LETTERS}        09AB2856862
 ${MOBILE_WITH_SPECIAL_CHARS}  0916-!@#-6862
 ${MOBILE_NO_COUNTRY_CODE}     9162856862
 ${MOBILE_STARTS_WITH_08}      08162856862
-${EMPTY_INPUT}                ${EMPTY}
+${EMPTY_INPUT}                
 
 *** Keywords ***
 Browser Is Opened To Facebook Registration Page
@@ -67,8 +67,8 @@ User Enters Valid Credentials With Mobile Number
     Click Button    name:websubmit
 
 # VERIFICATION KEYWORDS
-Confirm Email Page Should Be Displayed
-    Wait Until Page Contains    Enter the code from your email    timeout=20s
+Confirm Mobile Number Page Should Be Displayed
+    Wait Until Page Contains    Enter the code from your mobile number    timeout=20s
     Page Should Contain Element    css:input[name="code"] 
 
 Registration Error Should Appear
