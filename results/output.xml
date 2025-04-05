@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-05T10:52:18.566265" rpa="false" schemaversion="5">
+<suite id="s1" name="Fb-Signup-Test-Automation" source="c:\Users\John Paolo\Desktop\Thesis\fb-signup-test-automation">
+<suite id="s1-s1" name="Signup Test" source="c:\Users\John Paolo\Desktop\Thesis\fb-signup-test-automation\signup_test.robot">
+<test id="s1-s1-t1" name="Valid Mobile Number With 09 Prefix" line="13">
+<kw name="Given Browser Is Opened To Facebook Registration Page" owner="resource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-05T10:52:18.782098" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001CD7DBE8440&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-05T10:52:18.781642" elapsed="0.000947"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-05T10:52:18.782854" elapsed="0.000257"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:18.783673" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-04-05T10:52:18.783248" elapsed="1.401112"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:20.184974" level="INFO">Opening url 'https://www.facebook.com/r.php?locale=en_US&amp;display=page'</msg>
+<arg>${FACEBOOK_REGISTER_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-04-05T10:52:20.184635" elapsed="0.721164"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-05T10:52:20.906168" elapsed="0.031997"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-04-05T10:52:20.938639" elapsed="0.000814"/>
+</kw>
+<kw name="Registration Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:21.447497" level="INFO">Page title is 'Sign Up for Facebook'.</msg>
+<arg>Sign Up for Facebook</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-04-05T10:52:20.940461" elapsed="0.507889"/>
+</kw>
+<status status="PASS" start="2025-04-05T10:52:20.939833" elapsed="0.508708"/>
+</kw>
+<status status="PASS" start="2025-04-05T10:52:18.779867" elapsed="2.668762"/>
+</kw>
+<kw name="When User Enters Valid Credentials With Mobile Number" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:21.451785" level="INFO">Typing text 'Juan' into text field 'name:firstname'.</msg>
+<arg>name:firstname</arg>
+<arg>${VALID_FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:21.451290" elapsed="1.585282"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:23.037212" level="INFO">Typing text 'Cruz' into text field 'name:lastname'.</msg>
+<arg>name:lastname</arg>
+<arg>${VALID_LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:23.036841" elapsed="1.565048"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:24.602448" level="INFO">Clicking element 'name:birthday_month'.</msg>
+<arg>name:birthday_month</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:24.602140" elapsed="1.063521"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:25.666367" level="INFO">Selecting options from selection list 'name:birthday_month' by value 6.</msg>
+<arg>name:birthday_month</arg>
+<arg>${VALID_MONTH}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-04-05T10:52:25.665963" elapsed="4.071672"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:29.738173" level="INFO">Clicking element 'name:birthday_day'.</msg>
+<arg>name:birthday_day</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:29.737878" elapsed="1.073881"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:30.812386" level="INFO">Selecting options from selection list 'name:birthday_day' by value 1.</msg>
+<arg>name:birthday_day</arg>
+<arg>${VALID_DAY}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-04-05T10:52:30.812024" elapsed="4.066781"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:34.879435" level="INFO">Clicking element 'name:birthday_year'.</msg>
+<arg>name:birthday_year</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:34.879092" elapsed="1.075460"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:35.955285" level="INFO">Selecting options from selection list 'name:birthday_year' by value 1990.</msg>
+<arg>name:birthday_year</arg>
+<arg>${VALID_YEAR}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-04-05T10:52:35.954816" elapsed="4.066228"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:40.021906" level="INFO">Clicking element 'css:input[name="sex"][value="2"]'.</msg>
+<arg>css:input[name="sex"][value="2"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:40.021337" elapsed="1.059375"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:41.081356" level="INFO">Typing text '09162856862' into text field 'name:reg_email__'.</msg>
+<arg>name:reg_email__</arg>
+<arg>${mobile_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:41.080978" elapsed="1.569683"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:42.651309" level="INFO">Typing text 'Password123!' into text field 'name:reg_passwd__'.</msg>
+<arg>name:reg_passwd__</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:42.650927" elapsed="1.563568"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:52:44.215067" level="INFO">Clicking button 'name:websubmit'.</msg>
+<arg>name:websubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-05T10:52:44.214762" elapsed="2.566341"/>
+</kw>
+<arg>${MOBILE_09_PREFIX}</arg>
+<status status="PASS" start="2025-04-05T10:52:21.449993" elapsed="25.331295"/>
+</kw>
+<kw name="Then Confirm Email Page Should Be Displayed" owner="resource">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-04-05T10:53:07.905143" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-05T10:53:07.905702" level="FAIL">Text 'Enter the code from your email' did not appear in 20 seconds.</msg>
+<arg>Enter the code from your email</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-04-05T10:52:46.783880" elapsed="21.124869">Text 'Enter the code from your email' did not appear in 20 seconds.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>css:input[name="code"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-04-05T10:53:07.908998" elapsed="0.000141"/>
+</kw>
+<status status="FAIL" start="2025-04-05T10:52:46.782484" elapsed="21.126830">Text 'Enter the code from your email' did not appear in 20 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-05T10:53:07.910940" elapsed="2.589024"/>
+</kw>
+<status status="FAIL" start="2025-04-05T10:52:18.778495" elapsed="51.721874">Text 'Enter the code from your email' did not appear in 20 seconds.</status>
+</test>
+<status status="FAIL" start="2025-04-05T10:52:18.585651" elapsed="51.916081"/>
+</suite>
+<status status="FAIL" start="2025-04-05T10:52:18.569836" elapsed="51.933001"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fb-Signup-Test-Automation" id="s1" pass="0" fail="1" skip="0">Fb-Signup-Test-Automation</stat>
+<stat name="Signup Test" id="s1-s1" pass="0" fail="1" skip="0">Fb-Signup-Test-Automation.Signup Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
