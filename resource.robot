@@ -107,7 +107,7 @@ User Enters Invalid Credentials With Mobile Number
 
 # VERIFICATION KEYWORDS
 Confirm Mobile Number Page Should Be Displayed
-    Sleep    10s    # Wait for 15 seconds before checking
+    Sleep    15s    # Wait for 15 seconds before checking
     Wait Until Element Is Visible    css:._5dbb    timeout=15s
 
 Registration Error Should Appear

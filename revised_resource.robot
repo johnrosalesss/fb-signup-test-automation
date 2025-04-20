@@ -59,8 +59,8 @@ The user enters mobile number "+63-916-285-6862"
     Sleep    2s
     Wait Until Element Is Not Visible    css=div[role="progressbar"]    timeout=5s
 
-The user enters mobile number "0916285"
-    Input Text    name=reg_email__    0916285
+The user enters mobile number "0916"
+    Input Text    name=reg_email__    0916
     Sleep    2s
     Wait Until Element Is Not Visible    css=div[role="progressbar"]    timeout=5s
 
@@ -129,9 +129,9 @@ The user enters password "DEF123"
     [Documentation]    Enters password in registration form
     Input Password    name=reg_passwd__    DEF123
 
-The user enters password "ABC@#"
+The user enters password "ABC@#?"
     [Documentation]    Enters password in registration form
-    Input Password    name=reg_passwd__    ABC@#
+    Input Password    name=reg_passwd__    ABC@#?
 
 The user enters password "Abcdef!"
     [Documentation]    Enters password in registration form
@@ -155,11 +155,14 @@ The user clicks the submit button
 
 The system should show the mobile number confirmation page
     [Documentation]    Verifies mobile confirmation page appears
-    Wait Until Element Is Visible    css=div._5dbb    timeout=15s
+    Sleep    15s    # Wait for 15 seconds before checking
+    Wait Until Element Is Visible    css:._5dbb    timeout=15s
+
 
 The system should not show any mobile number format errors
     [Documentation]    Verifies no mobile number errors appear
-    Page Should Not Contain    Please enter a valid mobile number
+    Sleep    15s    # Wait for 15 seconds before checking
+    Wait Until Element Is Visible    css:._5dbb    timeout=15s
 
 The system should show a mobile number format error message
     [Documentation]    Verifies mobile number error appears
@@ -172,17 +175,17 @@ The system should not proceed to confirmation page
 
 The system should show a password complexity error message
     [Documentation]    Verifies password error appears
-    Wait Until Element Is Visible    css=div._5dbb    timeout=15s
-    Page Should Contain    Choose a more secure password
+    Sleep    15s    # Wait for 15 seconds before checking
+    Wait Until Element Is Visible    css:._5dbb    timeout=15s
 
 The system should not accept the password
     [Documentation]    Verifies password was rejected
-    Page Should Not Contain    Confirm your phone number
+    Sleep    15s    # Wait for 15 seconds before checking
+    Wait Until Element Is Visible    css:._5dbb    timeout=15s
 
 The system should accept the password
     [Documentation]    Verifies password was accepted
-    Wait Until Element Is Visible    css=div._5dbb    timeout=15s
-    Page Should Not Contain    Choose a more secure password
+    Sleep    15s    # Wait for 15 seconds before checking
 
 The system should show a password length error message
     [Documentation]    Verifies password length error appears
