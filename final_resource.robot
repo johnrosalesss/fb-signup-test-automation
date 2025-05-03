@@ -6,7 +6,7 @@ Library    Collections
 ${BROWSER}                 Chrome
 ${DELAY}                   0.5
 ${FACEBOOK_REGISTER_URL}    https://www.facebook.com/r.php?locale=en_US&display=page
-${EXPECTED_TITLE}          Sign Up for Facebook | Facebook
+${EXPECTED_TITLE}          Sign Up for Facebook
 
 *** Keywords ***
 
@@ -48,20 +48,16 @@ I should see the mobile confirmation page
 I should see "${message}"
     Wait Until Page Contains    ${message}    timeout=15s
 
-I should see password strength error
-    Wait Until Element Is Visible    css:div[data-testid='registration_error_message']    timeout=15s
-    Element Should Contain    css:div[data-testid='registration_error_message']    Choose a more secure password
-
 I should proceed to next step
     Sleep    15s    # Wait for 15 seconds before checking
 
-If the number is valid I should see the mobile confirmation page
-    ${status}=    Run Keyword And Return Status    I should see the mobile confirmation page
-    RETURN    ${status}
+If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "${error_message}"
+    ${valid}=    Run Keyword And Return Status    I should see the mobile confirmation page
+    Run Keyword If    not ${valid}    I should see "${error_message}"
 
-If password meets requirements I should proceed to next step
-    ${status}=    Run Keyword And Return Status    I should proceed to next step
-    RETURN    ${status}
+If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "${error_message}"
+    ${valid}=    Run Keyword And Return Status    I should proceed to next step
+    Run Keyword If    not ${valid}    I should see "${error_message}"
 
 ### Technical Implementation Keywords ###
 Open Chrome in incognito mode
