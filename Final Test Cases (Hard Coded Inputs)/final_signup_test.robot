@@ -5,11 +5,12 @@ Test Teardown     Close Browser
 *** Test Cases ***
 
 ### Mobile Number Validation Tests ###
+### Hello, I did not use a random number generator for the mobile number test cases because even if I use a random number generator some might be invalid even if the format is correct e.g. 09019288932 which will return a pop-up message "Please enter a valid mobile number or email address" ###
 
 # Test Case 1
 When I Sign Up for a new Facebook account using a proper Philippine mobile number that includes the +63 country code
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "+639162856862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -17,7 +18,7 @@ When I Sign Up for a new Facebook account using a proper Philippine mobile numbe
 # Test Case 2
 When I Sign Up for a new Facebook account using a standard Philippine mobile number that starts with 09 prefix
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "09162856862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -25,7 +26,7 @@ When I Sign Up for a new Facebook account using a standard Philippine mobile num
 # Test Case 3
 When I Sign Up for a new Facebook account using a Philippine mobile number that contains spaces between digit groups
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "+63 916 285 6862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -33,7 +34,7 @@ When I Sign Up for a new Facebook account using a Philippine mobile number that 
 # Test Case 4
 When I Sign Up for a new Facebook account using a Philippine mobile number formatted with dashes between digit groups
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "+63-916-285-6862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -41,7 +42,7 @@ When I Sign Up for a new Facebook account using a Philippine mobile number forma
 # Test Case 5
 When I Sign Up for a new Facebook account using a 10-digit Philippine mobile number without any country code
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "9162856862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -49,7 +50,7 @@ When I Sign Up for a new Facebook account using a 10-digit Philippine mobile num
 # Test Case 6
 When I Sign Up for a new Facebook account while only providing the first 4 digits of a Philippine mobile number
     Given I'm on the Facebook signup page 
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "0916" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -57,7 +58,7 @@ When I Sign Up for a new Facebook account while only providing the first 4 digit
 # Test Case 7
 When I Sign Up for a new Facebook account using an unusually long 15-digit mobile number
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "091628568621234" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -65,7 +66,7 @@ When I Sign Up for a new Facebook account using an unusually long 15-digit mobil
 # Test Case 8
 When I Sign Up for a new Facebook account using a mobile number that contains alphabetical letters mixed with digits
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "09AB2856862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -73,7 +74,7 @@ When I Sign Up for a new Facebook account using a mobile number that contains al
 # Test Case 9
 When I Sign Up for a new Facebook account using a mobile number that contains special characters like !@#
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "0916-!@#-6862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -81,7 +82,7 @@ When I Sign Up for a new Facebook account using a mobile number that contains sp
 # Test Case 10
 When I Sign Up for a new Facebook account using a mobile number that starts with invalid 08 prefix
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I type "08162856862" as my mobile number
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "Please enter a valid mobile number or email address"
@@ -89,7 +90,7 @@ When I Sign Up for a new Facebook account using a mobile number that starts with
 # Test Case 11
 When I Sign Up for a new Facebook account without providing any mobile number in the required field
     Given I'm on the Facebook signup page
-    And I've entered my basic information
+    And I've entered a valid input for credentials
     When I leave mobile number blank
     And I click sign up
     Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message "You'll use this when you login and if you ever need to reset your password."
@@ -100,7 +101,7 @@ When I Sign Up for a new Facebook account without providing any mobile number in
 # Test Case 12
 When I Sign Up for a new Facebook account using only a lowercase alphabetical password
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I set my password to "abcdef"
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Choose a more secure password It should be longer than 6 characters, unique to you, and difficult for others to guess."
@@ -108,7 +109,7 @@ When I Sign Up for a new Facebook account using only a lowercase alphabetical pa
 # Test Case 13
 When I Sign Up for a new Facebook account using a password that contains only numbers
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I set my password to "123456"
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Choose a more secure password It should be longer than 6 characters, unique to you, and difficult for others to guess."
@@ -116,7 +117,7 @@ When I Sign Up for a new Facebook account using a password that contains only nu
 # Test Case 14
 When I Sign Up for a new Facebook account using a simple password that combines lowercase letters and numbers only
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I set my password to "abc123"
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Choose a more secure password It should be longer than 6 characters, unique to you, and difficult for others to guess."
@@ -124,7 +125,7 @@ When I Sign Up for a new Facebook account using a simple password that combines 
 # Test Case 15
 When I Sign Up for a new Facebook account using a password that's only 4 characters long
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I set my password to "aB1@"
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Your password must be at least 6 characters long. Please try another."
@@ -132,7 +133,7 @@ When I Sign Up for a new Facebook account using a password that's only 4 charact
 # Test Case 16
 When I Sign Up for a new Facebook account without entering any password in the required field
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I leave password blank
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Enter a combination of at least six numbers, letters and punctuation marks (like ! and &)"
@@ -140,7 +141,7 @@ When I Sign Up for a new Facebook account without entering any password in the r
 # Test Case 17
 When I Sign Up for a new Facebook account using a strong password that combines uppercase, lowercase, numbers and symbols
     Given I'm on the Facebook signup page
-    And I've entered my basic information with email
+    And I've entered a valid input for credentials with valid mobile number
     When I set my password to "Paolo095!"
     And I click sign up
     Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message "Choose a more secure password It should be longer than 6 characters, unique to you, and difficult for others to guess."

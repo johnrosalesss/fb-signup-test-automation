@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-03T13:31:51.321317" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-03T21:25:04.400423" rpa="false" schemaversion="5">
 <suite id="s1" name="Fb-Signup-Test-Automation" source="c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation">
-<suite id="s1-s1" name="Final Signup Test" source="c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\final_signup_test.robot">
-<test id="s1-s1-t1" name="When I Sign Up for a new Facebook account using a password that's only 4 characters long" line="125">
-<kw name="Given I'm on the Facebook signup page" owner="final_resource">
-<kw name="Open Chrome in incognito mode" owner="final_resource">
+<suite id="s1-s1" name="Final Test Cases (With Random Generator)" source="c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)">
+<suite id="s1-s1-s1" name="Finals Signup Test" source="c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_signup_test.robot">
+<test id="s1-s1-s1-t1" name="When I Sign Up for a new Facebook account using a proper Philippine mobile number that includes the +63 country code" line="11">
+<kw name="Given I'm on the Facebook signup page" owner="finals_resource">
+<kw name="Open Chrome in incognito mode" owner="finals_resource">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-03T13:31:51.529029" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024251C05E80&gt;</msg>
+<msg time="2025-05-03T21:25:04.623520" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020B3D10DE80&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-03T13:31:51.528629" elapsed="0.000579"/>
+<status status="PASS" start="2025-05-03T21:25:04.623219" elapsed="0.000425"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-03T13:31:51.529385" elapsed="0.000235"/>
+<status status="PASS" start="2025-05-03T21:25:04.623793" elapsed="0.000470"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-03T13:31:51.529748" elapsed="0.000476"/>
+<status status="PASS" start="2025-05-03T21:25:04.624433" elapsed="0.000169"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:51.530580" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-05-03T21:25:04.624964" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-03T13:31:51.530356" elapsed="1.208109"/>
+<status status="PASS" start="2025-05-03T21:25:04.624725" elapsed="1.183479"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-03T13:31:52.738694" elapsed="0.024217"/>
+<status status="PASS" start="2025-05-03T21:25:05.808455" elapsed="0.025709"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-05-03T13:31:52.763141" elapsed="0.000404"/>
+<status status="PASS" start="2025-05-03T21:25:05.834423" elapsed="0.000389"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:51.528250" elapsed="1.235409"/>
+<status status="PASS" start="2025-05-03T21:25:04.622934" elapsed="1.212011"/>
 </kw>
-<kw name="Go to Facebook registration" owner="final_resource">
+<kw name="Go to Facebook registration" owner="finals_resource">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:52.764272" level="INFO">Opening url 'https://www.facebook.com/r.php?locale=en_US&amp;display=page'</msg>
+<msg time="2025-05-03T21:25:05.835582" level="INFO">Opening url 'https://www.facebook.com/r.php?locale=en_US&amp;display=page'</msg>
 <arg>${FACEBOOK_REGISTER_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-03T13:31:52.764087" elapsed="1.210354"/>
+<status status="PASS" start="2025-05-03T21:25:05.835394" elapsed="1.363911"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Sign Up</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-03T13:31:53.974713" elapsed="0.513093"/>
+<status status="PASS" start="2025-05-03T21:25:07.199624" elapsed="0.515071"/>
 </kw>
 <kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:54.996937" level="INFO">${actual_title} = Sign Up for Facebook</msg>
+<msg time="2025-05-03T21:25:08.222893" level="INFO">${actual_title} = Sign Up for Facebook</msg>
 <var>${actual_title}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-03T13:31:54.488077" elapsed="0.509113"/>
+<status status="PASS" start="2025-05-03T21:25:07.715004" elapsed="0.508129"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${actual_title}' != '${EXPECTED_TITLE}'</arg>
@@ -70,164 +71,124 @@
 <arg>Title mismatch. Expected: ${EXPECTED_TITLE}, Actual: ${actual_title}</arg>
 <arg>level=WARN</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-03T13:31:54.997432" elapsed="0.000463"/>
+<status status="PASS" start="2025-05-03T21:25:08.223393" elapsed="0.000444"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:52.763818" elapsed="2.234235"/>
+<status status="PASS" start="2025-05-03T21:25:05.835113" elapsed="2.388870"/>
 </kw>
-<kw name="Wait until page loads" owner="final_resource">
+<kw name="Wait until page loads" owner="finals_resource">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>name=firstname</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-03T13:31:54.998571" elapsed="1.020269"/>
+<status status="PASS" start="2025-05-03T21:25:08.224618" elapsed="1.017999"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:54.998255" elapsed="1.020814"/>
+<status status="PASS" start="2025-05-03T21:25:08.224138" elapsed="1.018751"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:51.525819" elapsed="4.493404"/>
+<status status="PASS" start="2025-05-03T21:25:04.620848" elapsed="4.622124"/>
 </kw>
-<kw name="And I've entered my basic information with email" owner="final_resource">
-<kw name="I've entered my basic information" owner="final_resource">
-<kw name="Enter name &quot;John Crisistom&quot; &quot;Rosales&quot;" owner="final_resource" source_name="Enter name &quot;${firstname}&quot; &quot;${lastname}&quot;">
+<kw name="And I've entered a valid input for credentials" owner="finals_resource">
+<kw name="Enter name &quot;John Crisistom&quot; &quot;Rosales&quot;" owner="finals_resource" source_name="Enter name &quot;${firstname}&quot; &quot;${lastname}&quot;">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:56.023303" level="INFO">Typing text 'John Crisistom' into text field 'name=firstname'.</msg>
+<msg time="2025-05-03T21:25:09.246884" level="INFO">Typing text 'John Crisistom' into text field 'name=firstname'.</msg>
 <arg>name=firstname</arg>
 <arg>${firstname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:31:56.023076" elapsed="1.580205"/>
+<status status="PASS" start="2025-05-03T21:25:09.246637" elapsed="1.573597"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:57.603902" level="INFO">Typing text 'Rosales' into text field 'name=lastname'.</msg>
+<msg time="2025-05-03T21:25:10.820860" level="INFO">Typing text 'Rosales' into text field 'name=lastname'.</msg>
 <arg>name=lastname</arg>
 <arg>${lastname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:31:57.603540" elapsed="1.569083"/>
+<status status="PASS" start="2025-05-03T21:25:10.820509" elapsed="1.560484"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:56.022835" elapsed="3.150293"/>
+<status status="PASS" start="2025-05-03T21:25:09.246300" elapsed="3.134914"/>
 </kw>
-<kw name="Select birthday November 17, 1994" owner="final_resource">
+<kw name="Select birthday November 17, 1994" owner="finals_resource">
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:31:59.174583" level="INFO">Selecting options from selection list 'name=birthday_month' by value 11.</msg>
+<msg time="2025-05-03T21:25:12.382255" level="INFO">Selecting options from selection list 'name=birthday_month' by value 11.</msg>
 <arg>name=birthday_month</arg>
 <arg>11</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-05-03T13:31:59.174209" elapsed="4.076151"/>
+<status status="PASS" start="2025-05-03T21:25:12.381931" elapsed="4.077584"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:03.251083" level="INFO">Selecting options from selection list 'name=birthday_day' by value 17.</msg>
+<msg time="2025-05-03T21:25:16.460159" level="INFO">Selecting options from selection list 'name=birthday_day' by value 17.</msg>
 <arg>name=birthday_day</arg>
 <arg>17</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-05-03T13:32:03.250690" elapsed="4.067243"/>
+<status status="PASS" start="2025-05-03T21:25:16.459812" elapsed="4.064821"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:07.318519" level="INFO">Selecting options from selection list 'name=birthday_year' by value 1994.</msg>
+<msg time="2025-05-03T21:25:20.525250" level="INFO">Selecting options from selection list 'name=birthday_year' by value 1994.</msg>
 <arg>name=birthday_year</arg>
 <arg>1994</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-05-03T13:32:07.318208" elapsed="4.075083"/>
+<status status="PASS" start="2025-05-03T21:25:20.524923" elapsed="4.068024"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:59.173561" elapsed="12.219966"/>
+<status status="PASS" start="2025-05-03T21:25:12.381435" elapsed="12.212016"/>
 </kw>
-<kw name="Choose male gender" owner="final_resource">
+<kw name="Choose male gender" owner="finals_resource">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:11.394302" level="INFO">Clicking element 'xpath=//input[@name='sex' and @value='2']'.</msg>
+<msg time="2025-05-03T21:25:24.594509" level="INFO">Clicking element 'xpath=//input[@name='sex' and @value='2']'.</msg>
 <arg>xpath=//input[@name='sex' and @value='2']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:32:11.394070" elapsed="1.057887"/>
+<status status="PASS" start="2025-05-03T21:25:24.594230" elapsed="1.055236"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:32:11.393689" elapsed="1.058458"/>
+<status status="PASS" start="2025-05-03T21:25:24.593709" elapsed="1.055964"/>
 </kw>
-<kw name="Set temporary password &quot;Paolo095!&quot;" owner="final_resource" source_name="Set temporary password &quot;${password}&quot;">
+<kw name="Set temporary password &quot;Paolo095!&quot;" owner="finals_resource" source_name="Set temporary password &quot;${password}&quot;">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:12.453041" level="INFO">Typing password into text field 'name=reg_passwd__'.</msg>
-<msg time="2025-05-03T13:32:13.479681" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-03T21:25:25.650517" level="INFO">Typing password into text field 'name=reg_passwd__'.</msg>
+<msg time="2025-05-03T21:25:26.676566" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>name=reg_passwd__</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:32:12.452741" elapsed="1.562776"/>
+<status status="PASS" start="2025-05-03T21:25:25.650248" elapsed="1.559306"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:32:12.452337" elapsed="1.563481"/>
+<status status="PASS" start="2025-05-03T21:25:25.649859" elapsed="1.559862"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:56.022581" elapsed="17.993366"/>
+<status status="PASS" start="2025-05-03T21:25:09.244756" elapsed="17.965056"/>
 </kw>
-<kw name="Use email &quot;natsuxlucy02@gmail.com&quot;" owner="final_resource" source_name="Use email &quot;${email}&quot;">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:14.016692" level="INFO">Typing text 'natsuxlucy02@gmail.com' into text field 'name=reg_email__'.</msg>
-<arg>name=reg_email__</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:32:14.016467" elapsed="1.576400"/>
+<kw name="When I generate and type a mobile number with prefix &quot;+63&quot; and length 12">
+<msg time="2025-05-03T21:25:27.214005" level="FAIL">No keyword with name 'When I generate and type a mobile number with prefix "+63" and length 12' found.</msg>
+<status status="FAIL" start="2025-05-03T21:25:27.212937" elapsed="0.001429">No keyword with name 'When I generate and type a mobile number with prefix "+63" and length 12' found.</status>
 </kw>
-<status status="PASS" start="2025-05-03T13:32:14.016118" elapsed="1.576967"/>
+<kw name="And I click sign up" owner="finals_resource">
+<status status="NOT RUN" start="2025-05-03T21:25:27.215590" elapsed="0.002153"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:56.021255" elapsed="19.571939"/>
-</kw>
-<kw name="When I set my password to &quot;aB1@&quot;" owner="final_resource" source_name="I set my password to &quot;${password}&quot;">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:15.597137" level="INFO">Typing password into text field 'name=reg_passwd__'.</msg>
-<msg time="2025-05-03T13:32:16.623104" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>name=reg_passwd__</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:32:15.596879" elapsed="1.562928"/>
-</kw>
-<status status="PASS" start="2025-05-03T13:32:15.594633" elapsed="1.565338"/>
-</kw>
-<kw name="And I click sign up" owner="final_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-03T13:32:17.163948" level="INFO">Clicking button 'name=websubmit'.</msg>
-<arg>name=websubmit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-03T13:32:17.163743" elapsed="2.576950"/>
-</kw>
-<status status="PASS" start="2025-05-03T13:32:17.162000" elapsed="2.578908"/>
-</kw>
-<kw name="Then If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message &quot;Your password must be at least 6 characters long. Please try another.&quot;" owner="final_resource" source_name="If password meets requirements I should proceed to mobile number confirmation otherwise I should see a pop-up message &quot;${error_message}&quot;">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="I should proceed to next step" owner="final_resource">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-03T13:32:34.745536" level="INFO">Slept 15 seconds.</msg>
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-03T13:32:19.744991" elapsed="15.001113"/>
-</kw>
-<status status="PASS" start="2025-05-03T13:32:19.744770" elapsed="15.001501"/>
-</kw>
-<msg time="2025-05-03T13:32:34.746389" level="INFO">${valid} = True</msg>
-<var>${valid}</var>
-<arg>I should proceed to next step</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-03T13:32:19.744518" elapsed="15.002038"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>not ${valid}</arg>
-<arg>I should see "${error_message}"</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-03T13:32:34.746748" elapsed="0.000351"/>
-</kw>
-<status status="PASS" start="2025-05-03T13:32:19.743198" elapsed="15.003992"/>
+<kw name="Then If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message &quot;Please enter a valid mobile number or email address&quot;" owner="finals_resource" source_name="If the number is valid I should see the mobile confirmation page otherwise I should see a pop-up message &quot;${error_message}&quot;">
+<status status="NOT RUN" start="2025-05-03T21:25:27.220043" elapsed="0.001758"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-03T13:32:34.748592" elapsed="2.576385"/>
+<status status="PASS" start="2025-05-03T21:25:27.223774" elapsed="2.564692"/>
 </kw>
-<status status="PASS" start="2025-05-03T13:31:51.525001" elapsed="45.800326"/>
+<status status="FAIL" start="2025-05-03T21:25:04.619770" elapsed="25.169001">No keyword with name 'When I generate and type a mobile number with prefix "+63" and length 12' found.</status>
 </test>
-<status status="PASS" start="2025-05-03T13:31:51.339267" elapsed="45.987122"/>
+<status status="FAIL" start="2025-05-03T21:25:04.421312" elapsed="25.369001"/>
 </suite>
-<status status="PASS" start="2025-05-03T13:31:51.324688" elapsed="46.002626"/>
+<status status="FAIL" start="2025-05-03T21:25:04.419489" elapsed="25.371870"/>
+</suite>
+<status status="FAIL" start="2025-05-03T21:25:04.403818" elapsed="25.388369"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Fb-Signup-Test-Automation" id="s1" pass="1" fail="0" skip="0">Fb-Signup-Test-Automation</stat>
-<stat name="Final Signup Test" id="s1-s1" pass="1" fail="0" skip="0">Fb-Signup-Test-Automation.Final Signup Test</stat>
+<stat name="Fb-Signup-Test-Automation" id="s1" pass="0" fail="1" skip="0">Fb-Signup-Test-Automation</stat>
+<stat name="Final Test Cases (With Random Generator)" id="s1-s1" pass="0" fail="1" skip="0">Fb-Signup-Test-Automation.Final Test Cases (With Random Generator)</stat>
+<stat name="Finals Signup Test" id="s1-s1-s1" pass="0" fail="1" skip="0">Fb-Signup-Test-Automation.Final Test Cases (With Random Generator).Finals Signup Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-03T21:25:04.426159" level="WARN">Error in file 'c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_resource.robot' on line 20: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-05-03T21:25:04.427072" level="WARN">Error in file 'c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_resource.robot' on line 27: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-05-03T21:25:04.427696" level="WARN">Error in file 'c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_resource.robot' on line 34: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-05-03T21:25:04.428311" level="WARN">Error in file 'c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_resource.robot' on line 40: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-05-03T21:25:04.428698" level="WARN">Error in file 'c:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\Final Test Cases (With Random Generator)\finals_resource.robot' on line 46: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

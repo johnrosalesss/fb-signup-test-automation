@@ -16,15 +16,15 @@ I'm on the Facebook signup page
     Go to Facebook registration
     Wait until page loads
 
-I've entered my basic information
+I've entered a valid input for credentials
     Enter name "John Crisistom" "Rosales"
     Select birthday November 17, 1994
     Choose male gender
     Set temporary password "Paolo095!"
 
-I've entered my basic information with email
-    I've entered my basic information
-    Use email "natsuxlucy02@gmail.com"
+I've entered a valid input for credentials with valid mobile number
+    I've entered a valid input for credentials
+    Use email "09162856862"
 
 I type "${number}" as my mobile number
     Input Text    name=reg_email__    ${number}
