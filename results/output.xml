@@ -1,180 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-20T21:54:25.035749" rpa="false" schemaversion="5">
-<suite id="s1" name="Fb-Signup-Test-Automation" source="c:\Users\John Paolo\Desktop\Thesis\fb-signup-test-automation">
-<suite id="s1-s1" name="Revised Signup Test" source="c:\Users\John Paolo\Desktop\Thesis\fb-signup-test-automation\revised_signup_test.robot">
-<test id="s1-s1-t1" name="Invalid Password With Only 4 Characters (Too Short)" line="282">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-30T15:13:57.703533" rpa="false" schemaversion="5">
+<suite id="s1" name="Fb-Signup-Test-Automation" source="C:\Users\John Paolo\Desktop\Github\fb-signup-test-automation">
+<suite id="s1-s1" name="Revised Signup Test" source="C:\Users\John Paolo\Desktop\Github\fb-signup-test-automation\revised_signup_test.robot">
+<test id="s1-s1-t1" name="Valid Mobile Number With Dashes" line="47">
 <kw name="Given The user opens Chrome browser in incognito mode" owner="revised_resource">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-04-20T21:54:25.235983" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000279E4F1C1A0&gt;</msg>
+<msg time="2025-04-30T15:13:58.006295" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000199FE710050&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-04-20T21:54:25.235524" elapsed="0.000691"/>
+<status status="PASS" start="2025-04-30T15:13:58.005657" elapsed="0.000851"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-04-20T21:54:25.236416" elapsed="0.000475"/>
+<status status="PASS" start="2025-04-30T15:13:58.006722" elapsed="0.000566"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:25.237417" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-04-30T15:13:58.007954" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-04-20T21:54:25.237083" elapsed="1.193161"/>
+<status status="PASS" start="2025-04-30T15:13:58.007513" elapsed="2.937022"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-04-20T21:54:26.430682" elapsed="0.026783"/>
+<status status="PASS" start="2025-04-30T15:14:00.944860" elapsed="0.035649"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-04-20T21:54:26.457693" elapsed="0.000389"/>
+<status status="PASS" start="2025-04-30T15:14:00.980779" elapsed="0.000554"/>
 </kw>
 <doc>Opens a new Chrome browser window in incognito mode</doc>
-<status status="PASS" start="2025-04-20T21:54:25.233568" elapsed="1.224630"/>
+<status status="PASS" start="2025-04-30T15:13:58.003580" elapsed="2.978004"/>
 </kw>
 <kw name="And The user navigates to Facebook registration page" owner="revised_resource">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:26.461302" level="INFO">Opening url 'https://www.facebook.com/r.php?locale=en_US&amp;display=page'</msg>
+<msg time="2025-04-30T15:14:00.985255" level="INFO">Opening url 'https://www.facebook.com/r.php?locale=en_US&amp;display=page'</msg>
 <arg>${FACEBOOK_REGISTER_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-04-20T21:54:26.461050" elapsed="1.253256"/>
+<status status="PASS" start="2025-04-30T15:14:00.984995" elapsed="3.284962"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Sign Up</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-04-20T21:54:27.715018" elapsed="0.518159"/>
+<status status="PASS" start="2025-04-30T15:14:04.270631" elapsed="0.528572"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:28.746327" level="INFO">Page title is 'Sign Up for Facebook'.</msg>
+<msg time="2025-04-30T15:14:05.308970" level="INFO">Page title is 'Sign Up for Facebook'.</msg>
 <arg>Sign Up for Facebook</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-04-20T21:54:28.233406" elapsed="0.513416"/>
+<status status="PASS" start="2025-04-30T15:14:04.799987" elapsed="0.509421"/>
 </kw>
 <doc>Navigates to Facebook's registration page</doc>
-<status status="PASS" start="2025-04-20T21:54:26.459690" elapsed="2.287309"/>
+<status status="PASS" start="2025-04-30T15:14:00.983376" elapsed="4.326269"/>
 </kw>
 <kw name="When The user enters a valid first name &quot;John Crisistom&quot;" owner="revised_resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:28.750218" level="INFO">Typing text 'John Crisistom' into text field 'name=firstname'.</msg>
+<msg time="2025-04-30T15:14:05.314540" level="INFO">Typing text 'John Crisistom' into text field 'name=firstname'.</msg>
 <arg>name=firstname</arg>
 <arg>John Crisistom</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:28.749682" elapsed="1.598892"/>
+<status status="PASS" start="2025-04-30T15:14:05.313979" elapsed="1.635998"/>
 </kw>
 <doc>Enters first name in the registration form</doc>
-<status status="PASS" start="2025-04-20T21:54:28.748389" elapsed="1.600723"/>
+<status status="PASS" start="2025-04-30T15:14:05.311706" elapsed="1.638685"/>
 </kw>
 <kw name="And The user enters a valid last name &quot;Rosales&quot;" owner="revised_resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:30.357862" level="INFO">Typing text 'Rosales' into text field 'name=lastname'.</msg>
+<msg time="2025-04-30T15:14:06.954559" level="INFO">Typing text 'Rosales' into text field 'name=lastname'.</msg>
 <arg>name=lastname</arg>
 <arg>Rosales</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:30.357144" elapsed="1.582819"/>
+<status status="PASS" start="2025-04-30T15:14:06.954252" elapsed="1.611345"/>
 </kw>
 <doc>Enters last name in the registration form</doc>
-<status status="PASS" start="2025-04-20T21:54:30.352863" elapsed="1.587706"/>
+<status status="PASS" start="2025-04-30T15:14:06.952259" elapsed="1.613916"/>
 </kw>
 <kw name="And The user selects birthdate November 17, 1994" owner="revised_resource">
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:31.947413" level="INFO">Selecting options from selection list 'name=birthday_month' by value 11.</msg>
+<msg time="2025-04-30T15:14:08.570467" level="INFO">Selecting options from selection list 'name=birthday_month' by value 11.</msg>
 <arg>name=birthday_month</arg>
 <arg>11</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-04-20T21:54:31.947199" elapsed="4.125977"/>
+<status status="PASS" start="2025-04-30T15:14:08.570121" elapsed="4.124556"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:36.073737" level="INFO">Selecting options from selection list 'name=birthday_day' by value 17.</msg>
+<msg time="2025-04-30T15:14:12.695841" level="INFO">Selecting options from selection list 'name=birthday_day' by value 17.</msg>
 <arg>name=birthday_day</arg>
 <arg>17</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-04-20T21:54:36.073432" elapsed="4.067311"/>
+<status status="PASS" start="2025-04-30T15:14:12.695384" elapsed="4.115969"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:40.141630" level="INFO">Selecting options from selection list 'name=birthday_year' by value 1994.</msg>
+<msg time="2025-04-30T15:14:16.812076" level="INFO">Selecting options from selection list 'name=birthday_year' by value 1994.</msg>
 <arg>name=birthday_year</arg>
 <arg>1994</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-04-20T21:54:40.141152" elapsed="4.072160"/>
+<status status="PASS" start="2025-04-30T15:14:16.811700" elapsed="4.108612"/>
 </kw>
 <doc>Selects birthdate in the registration form</doc>
-<status status="PASS" start="2025-04-20T21:54:31.945535" elapsed="12.267998"/>
+<status status="PASS" start="2025-04-30T15:14:08.568428" elapsed="12.352266"/>
 </kw>
 <kw name="And The user selects male gender" owner="revised_resource">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:44.217073" level="INFO">Clicking element 'xpath=//input[@name='sex' and @value='2']'.</msg>
+<msg time="2025-04-30T15:14:20.928773" level="INFO">Clicking element 'xpath=//input[@name='sex' and @value='2']'.</msg>
 <arg>xpath=//input[@name='sex' and @value='2']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:44.216816" elapsed="1.060626"/>
+<status status="PASS" start="2025-04-30T15:14:20.928079" elapsed="1.090116"/>
 </kw>
 <doc>Selects male gender option</doc>
-<status status="PASS" start="2025-04-20T21:54:44.215006" elapsed="1.062673"/>
+<status status="PASS" start="2025-04-30T15:14:20.923542" elapsed="1.094909"/>
 </kw>
-<kw name="And The user enters a valid email &quot;natsuxlucy02@gmail.com&quot;" owner="revised_resource">
+<kw name="And The user enters mobile number &quot;+63-916-285-6862&quot;" owner="revised_resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:45.281272" level="INFO">Typing text 'natsuxlucy02@gmail.com' into text field 'name=reg_email__'.</msg>
+<msg time="2025-04-30T15:14:22.023501" level="INFO">Typing text '+63-916-285-6862' into text field 'name=reg_email__'.</msg>
 <arg>name=reg_email__</arg>
-<arg>natsuxlucy02@gmail.com</arg>
+<arg>+63-916-285-6862</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:45.281037" elapsed="1.574707"/>
+<status status="PASS" start="2025-04-30T15:14:22.023167" elapsed="1.613874"/>
 </kw>
-<doc>Enters email in registration form</doc>
-<status status="PASS" start="2025-04-20T21:54:45.279826" elapsed="1.576138"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-30T15:14:25.638039" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-30T15:14:23.637379" elapsed="2.001050"/>
 </kw>
-<kw name="And The user enters password &quot;aB1@&quot;" owner="revised_resource">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>css=div[role="progressbar"]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-04-30T15:14:25.638656" elapsed="0.515094"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:14:22.020955" elapsed="4.133031"/>
+</kw>
+<kw name="And The user enters password &quot;Paolo095!&quot;" owner="revised_resource">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:46.859689" level="INFO">Typing password into text field 'name=reg_passwd__'.</msg>
-<msg time="2025-04-20T21:54:47.887004" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-04-30T15:14:26.158388" level="INFO">Typing password into text field 'name=reg_passwd__'.</msg>
+<msg time="2025-04-30T15:14:27.203396" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>name=reg_passwd__</arg>
-<arg>aB1@</arg>
+<arg>Paolo095!</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:46.859429" elapsed="1.560855"/>
+<status status="PASS" start="2025-04-30T15:14:26.158137" elapsed="1.596668"/>
 </kw>
 <doc>Enters password in registration form</doc>
-<status status="PASS" start="2025-04-20T21:54:46.857239" elapsed="1.563242"/>
+<status status="PASS" start="2025-04-30T15:14:26.156189" elapsed="1.598800"/>
 </kw>
 <kw name="And The user clicks the submit button" owner="revised_resource">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:54:48.424902" level="INFO">Clicking button 'name=websubmit'.</msg>
+<msg time="2025-04-30T15:14:27.758994" level="INFO">Clicking button 'name=websubmit'.</msg>
 <arg>name=websubmit</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:54:48.424453" elapsed="2.574143"/>
+<status status="PASS" start="2025-04-30T15:14:27.758748" elapsed="2.607152"/>
 </kw>
 <doc>Clicks the registration submit button</doc>
-<status status="PASS" start="2025-04-20T21:54:48.422673" elapsed="2.576228"/>
+<status status="PASS" start="2025-04-30T15:14:27.756999" elapsed="2.609411"/>
 </kw>
-<kw name="Then The system should not accept the password" owner="revised_resource">
+<kw name="Then The system should show the mobile number confirmation page" owner="revised_resource">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:55:06.003338" level="INFO">Slept 15 seconds.</msg>
+<msg time="2025-04-30T15:14:45.371266" level="INFO">Slept 15 seconds.</msg>
 <arg>15s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:54:51.002540" elapsed="15.001120"/>
+<status status="PASS" start="2025-04-30T15:14:30.370642" elapsed="15.001492"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:._5dbb</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-20T21:55:06.003863" elapsed="1.018318"/>
+<status status="PASS" start="2025-04-30T15:14:45.372520" elapsed="1.075926"/>
 </kw>
-<doc>Verifies password was rejected</doc>
-<status status="PASS" start="2025-04-20T21:54:51.001131" elapsed="16.021301"/>
+<doc>Verifies mobile confirmation page appears</doc>
+<status status="PASS" start="2025-04-30T15:14:30.368803" elapsed="16.079876"/>
+</kw>
+<kw name="And The system should not show any mobile number format errors" owner="revised_resource">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-30T15:15:01.453031" level="INFO">Slept 15 seconds.</msg>
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-30T15:14:46.452456" elapsed="15.001001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:._5dbb</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-30T15:15:01.453697" elapsed="1.024907"/>
+</kw>
+<doc>Verifies no mobile number errors appear</doc>
+<status status="PASS" start="2025-04-30T15:14:46.450750" elapsed="16.028129"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-20T21:55:07.024524" elapsed="2.586654"/>
+<status status="PASS" start="2025-04-30T15:15:02.481158" elapsed="2.590500"/>
 </kw>
-<status status="PASS" start="2025-04-20T21:54:25.232403" elapsed="44.379128"/>
+<status status="PASS" start="2025-04-30T15:13:58.001798" elapsed="67.070492"/>
 </test>
-<status status="PASS" start="2025-04-20T21:54:25.054974" elapsed="44.557476"/>
+<status status="PASS" start="2025-04-30T15:13:57.750700" elapsed="67.323807"/>
 </suite>
-<status status="PASS" start="2025-04-20T21:54:25.039186" elapsed="44.574149"/>
+<status status="PASS" start="2025-04-30T15:13:57.725968" elapsed="67.351512"/>
 </suite>
 <statistics>
 <total>
